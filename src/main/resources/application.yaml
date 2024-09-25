@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/tasklist?/currentSchema=tasklist
+    url: jdbc:postgresql://localhost:5432/tasklist?currentSchema=tasklist
     username: postgres
     password: tawkenskiy
     driver-class-name: org.postgresql.Driver
@@ -9,4 +9,4 @@ spring:
     init:
       mode: always
       continue-on-error: false
-      data-locations: classpath:demo_data.sql
+#      data-locations: classpath:demo_data.sql
