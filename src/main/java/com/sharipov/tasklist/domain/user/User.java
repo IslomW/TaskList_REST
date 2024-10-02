@@ -3,7 +3,7 @@ package com.sharipov.tasklist.domain.user;
 import com.sharipov.tasklist.domain.task.Task;
 import lombok.Data;
 
-import javax.management.relation.Role;
+
 import java.util.List;
 import java.util.Set;
 
