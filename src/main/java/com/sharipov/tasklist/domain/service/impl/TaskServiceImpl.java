@@ -3,8 +3,8 @@ package com.sharipov.tasklist.domain.service.impl;
 import com.sharipov.tasklist.domain.exception.ResourceNotFoundException;
 import com.sharipov.tasklist.domain.repository.TaskRepository;
 import com.sharipov.tasklist.domain.service.TaskService;
-import com.sharipov.tasklist.domain.task.Status;
-import com.sharipov.tasklist.domain.task.Task;
+import com.sharipov.tasklist.domain.entity.task.Status;
+import com.sharipov.tasklist.domain.entity.task.Task;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,22 +36,21 @@ public class TaskServiceImpl implements TaskService {
         if (task.getStatus() == null) {
             task.setStatus(Status.TODO);
         }
-        taskRepository.update(task);
+        taskRepository.save(task);
         return task;
     }
 
     @Override
     @Transactional
-    public Task create(Task task, Long userId) {
+    public Task create(Task task) {
         task.setStatus(Status.TODO);
-        taskRepository.create(task);
-        taskRepository.assignToUserById(task.getId(), userId);
+        taskRepository.save(task);
         return task;
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
-        taskRepository.delete(id);
+        taskRepository.deleteById(id);
     }
 }

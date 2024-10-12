@@ -2,8 +2,8 @@ package com.sharipov.tasklist.domain.web.controller;
 
 import com.sharipov.tasklist.domain.service.AuthService;
 import com.sharipov.tasklist.domain.service.UserService;
-import com.sharipov.tasklist.domain.user.User;
-import com.sharipov.tasklist.domain.web.dto.auth.JwtRequest;
+import com.sharipov.tasklist.domain.entity.user.User;
+import com.sharipov.tasklist.domain.web.dto.auth.AuthDTO;
 import com.sharipov.tasklist.domain.web.dto.auth.JwtResponse;
 import com.sharipov.tasklist.domain.web.dto.user.UserDto;
 import com.sharipov.tasklist.domain.web.dto.vadlidation.OnCreate;
@@ -29,7 +29,7 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public JwtResponse login(@Validated @RequestBody JwtRequest loginRequest){
+    public JwtResponse login(@Validated @RequestBody AuthDTO loginRequest){
         return authService.login(loginRequest);
     }
 

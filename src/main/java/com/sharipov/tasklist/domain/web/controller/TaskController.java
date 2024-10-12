@@ -1,7 +1,7 @@
 package com.sharipov.tasklist.domain.web.controller;
 
 import com.sharipov.tasklist.domain.service.TaskService;
-import com.sharipov.tasklist.domain.task.Task;
+import com.sharipov.tasklist.domain.entity.task.Task;
 import com.sharipov.tasklist.domain.web.dto.task.TaskDto;
 import com.sharipov.tasklist.domain.web.dto.vadlidation.OnUpdate;
 import com.sharipov.tasklist.domain.web.mappers.TaskMapper;

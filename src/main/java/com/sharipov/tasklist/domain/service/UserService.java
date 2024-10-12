@@ -1,7 +1,6 @@
 package com.sharipov.tasklist.domain.service;
 
-import com.sharipov.tasklist.domain.user.User;
-import org.springframework.stereotype.Service;
+import com.sharipov.tasklist.domain.entity.user.User;
 
 
 public interface UserService {
@@ -9,6 +8,5 @@ public interface UserService {
     User getByUsername(String username);
     User update(User user);
     User create(User user);
-    boolean isTaskOwner(Long userId, Long taskId);
     void delete(Long id);
 }

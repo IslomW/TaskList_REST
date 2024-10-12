@@ -1,16 +1,8 @@
 package com.sharipov.tasklist.domain.repository;
 
-import com.sharipov.tasklist.domain.user.Role;
-import com.sharipov.tasklist.domain.user.User;
+import com.sharipov.tasklist.domain.entity.user.User;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.Optional;
-
-public interface UserRepository {
-    Optional<User> findById(Long id);
-    Optional<User> findByUsername(String username);
-    void update(User user);
-    void create(User user);
-    void insertUserRole(Long userId, Role role);
-    boolean isTaskOwner(Long userId, Long taskId);
-    void delete(Long id);
+public interface UserRepository extends CrudRepository<User, Long> {
+User findByUsername(String username);
 }

@@ -2,10 +2,9 @@ package com.sharipov.tasklist.domain.service.impl;
 
 import com.sharipov.tasklist.domain.service.AuthService;
 import com.sharipov.tasklist.domain.service.UserService;
-import com.sharipov.tasklist.domain.user.User;
-import com.sharipov.tasklist.domain.web.dto.auth.JwtRequest;
+import com.sharipov.tasklist.domain.entity.user.User;
+import com.sharipov.tasklist.domain.web.dto.auth.AuthDTO;
 import com.sharipov.tasklist.domain.web.dto.auth.JwtResponse;
-import com.sharipov.tasklist.domain.web.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +19,7 @@ public class AuthServiceImpl implements AuthService {
     private final JwtTokenProvider jwtTokenProvider;
 
     @Override
-    public JwtResponse login(JwtRequest loginRequest) {
+    public JwtResponse login(AuthDTO loginRequest) {
         JwtResponse jwtResponse = new JwtResponse();
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
         User user = userService.getByUsername(loginRequest.getUsername());

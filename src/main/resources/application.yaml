@@ -5,11 +5,7 @@ spring:
     password: tawkenskiy
     driver-class-name: org.postgresql.Driver
 
-  sql:
-    init:
-      mode: always
-      continue-on-error: false
-#      data-locations: classpath:demo_data.sql
+
 
 
 

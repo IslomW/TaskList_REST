@@ -1,7 +1,7 @@
 package com.sharipov.tasklist.domain.web.dto.task;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.sharipov.tasklist.domain.task.Status;
+import com.sharipov.tasklist.domain.entity.task.Status;
 import com.sharipov.tasklist.domain.web.dto.vadlidation.OnCreate;
 import com.sharipov.tasklist.domain.web.dto.vadlidation.OnUpdate;
 import jakarta.validation.constraints.NotNull;
@@ -10,7 +10,6 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 public class TaskDto {

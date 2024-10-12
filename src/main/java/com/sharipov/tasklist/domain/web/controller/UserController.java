@@ -3,8 +3,8 @@ package com.sharipov.tasklist.domain.web.controller;
 
 import com.sharipov.tasklist.domain.service.TaskService;
 import com.sharipov.tasklist.domain.service.UserService;
-import com.sharipov.tasklist.domain.task.Task;
-import com.sharipov.tasklist.domain.user.User;
+import com.sharipov.tasklist.domain.entity.task.Task;
+import com.sharipov.tasklist.domain.entity.user.User;
 import com.sharipov.tasklist.domain.web.dto.task.TaskDto;
 import com.sharipov.tasklist.domain.web.dto.user.UserDto;
 import com.sharipov.tasklist.domain.web.dto.vadlidation.OnCreate;
@@ -53,11 +53,10 @@ public class UserController {
         userService.delete(id);
     }
 
-    @PostMapping("/{id}/tasks")
-    public TaskDto createTask(@PathVariable Long id,
-                              @Validated(OnCreate.class) @RequestBody TaskDto dto){
+    @PostMapping("/task")
+    public TaskDto createTask(@Validated(OnCreate.class) @RequestBody TaskDto dto){
         Task task = taskMapper.toEntity(dto);
-        Task createdTask = taskService.create(task, id);
+        Task createdTask = taskService.create(task);
         return taskMapper.toDto(createdTask);
     }
 }
