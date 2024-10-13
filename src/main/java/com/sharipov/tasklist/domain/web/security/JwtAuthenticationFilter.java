@@ -1,4 +1,4 @@
-package com.sharipov.tasklist.config;
+package com.sharipov.tasklist.domain.web.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
